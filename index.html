@@ -67,3 +67,69 @@ footer{text-align:center;padding:22px;color:#778399;font-size:12px}
 const content={
 "Home":`<div class="item">❤️ IHope2U में आपका स्वागत है।</div>
 <div class="item">यहाँ शिक्षा, समाचार
+ और मनोरंजन से जुड़ी उपयोगी जानकारी मिलेगी।</div>`,
+
+"News":`
+<div class="item">📰 ताजा समाचार और महत्वपूर्ण अपडेट।</div>
+<div class="item">देश, प्रदेश और स्थानीय समाचार पढ़ें।</div>
+<button onclick="openPosts('News')">समाचार पढ़ें</button>`,
+
+"Education":`
+<div class="item">📚 शिक्षा और प्रतियोगी परीक्षा की तैयारी।</div>
+<div class="item">MP TET, CG TET, CTET और अन्य परीक्षाओं की सामग्री।</div>
+<button onclick="openPosts('Education')">अध्ययन सामग्री पढ़ें</button>`,
+
+"Blogs":`
+<div class="item">✍️ रोचक लेख, उपयोगी जानकारी और कहानियाँ।</div>
+<button onclick="openPosts('Blogs')">सभी लेख पढ़ें</button>`,
+
+"Earn & Rewards":`
+<div class="item">🎁 ऑनलाइन कमाई और रिवॉर्ड से जुड़ी जानकारी।</div>
+<div class="item">सावधान रहें और किसी भी योजना की सत्यता जाँचें।</div>
+<button onclick="openPosts('Earn')">जानकारी देखें</button>`,
+
+"Entertainment":`
+<div class="item">🎬 मनोरंजन, वीडियो और रोचक जानकारियाँ।</div>
+<button onclick="openPosts('Entertainment')">और देखें</button>`,
+
+"Refer & Earn":`
+<div class="item">🤝 IHope2U को अपने दोस्तों के साथ साझा करें।</div>
+<button onclick="shareWebsite()">Share IHope2U</button>`,
+
+"My Profile":`
+<div class="item">👤 IHope2U में आपका स्वागत है।</div>
+<div class="item">यह वेबसाइट शिक्षा और उपयोगी जानकारी साझा करने के लिए है।</div>`
+};
+
+function openPage(name){
+ document.getElementById("home").style.display="none";
+ document.getElementById("section").style.display="block";
+ document.getElementById("pageTitle").textContent=name;
+ document.getElementById("pageContent").innerHTML=content[name] || "जानकारी उपलब्ध नहीं है।";
+ window.scrollTo(0,0);
+}
+
+function goHome(){
+ document.getElementById("section").style.display="none";
+ document.getElementById("home").style.display="block";
+ window.scrollTo(0,0);
+}
+
+function openPosts(query){
+ window.location.href="/search?q="+encodeURIComponent(query);
+}
+
+function shareWebsite(){
+ if(navigator.share){
+  navigator.share({
+   title:"IHope2U",
+   text:"शिक्षा, समाचार और उपयोगी जानकारी के लिए IHope2U देखें।",
+   url:window.location.origin
+  });
+ }else{
+  window.prompt("इस लिंक को कॉपी करें:",window.location.origin);
+ }
+}
+</script>
+</body>
+</html>
