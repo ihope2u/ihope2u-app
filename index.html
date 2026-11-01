@@ -1,86 +1,69 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>IHope2U</title>
 <style>
 *{box-sizing:border-box}
-body{margin:0;font-family:Arial;background:#f3f7fc;color:#17243b}
-header{background:linear-gradient(130deg,#071b3a,#123c78);color:white;padding:24px 18px 30px;border-radius:0 0 25px 25px}
-.logo{font-size:25px;font-weight:bold}.logo span{color:#21c7d9}
-.hero{margin-top:25px}.hero h1{font-size:28px;margin-bottom:8px}
-.hero p{color:#d7e5fa;line-height:1.5}
-main{padding:15px;max-width:900px;margin:auto}
-.title{font-size:19px;margin:12px 2px}
+body{margin:0;font-family:Arial,sans-serif;background:#f2f6fc;color:#17243b}
+header{background:linear-gradient(135deg,#071b3a,#14518c);color:white;padding:25px 18px;border-radius:0 0 25px 25px}
+.logo{font-size:27px;font-weight:bold}
+.logo span{color:#28d1e1}
+header p{color:#dcecff;line-height:1.6}
+main{max-width:850px;margin:auto;padding:16px}
+h2{font-size:20px}
 .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
-.card{background:white;border:1px solid #e5ebf4;border-radius:17px;padding:17px 15px;min-height:115px;box-shadow:0 5px 16px #0b2b5010;cursor:pointer}
-.card:active{background:#e4faff}
-.icon{font-size:25px;margin-bottom:9px}
-.card h3{margin:0 0 5px;font-size:16px}
-.card p{margin:0;color:#6c7890;font-size:12px;line-height:1.45}
-.notice{margin-top:18px;background:#e4faff;border:1px solid #b8edf4;border-radius:15px;padding:15px;font-size:13px;line-height:1.5}
-.page{display:none;background:white;border-radius:17px;padding:20px;min-height:220px}
-.page h2{color:#123c78}
-button{background:#123c78;color:white;border:0;padding:12px 20px;border-radius:9px;font-size:15px;margin-top:15px}
-footer{text-align:center;color:#6c7890;font-size:12px;padding:20px}
-@media(min-width:650px){.grid{grid-template-columns:repeat(4,1fr)}}
+.card{background:white;padding:18px 13px;border-radius:16px;border:1px solid #e1e9f4;box-shadow:0 4px 12px #102d5010;cursor:pointer}
+.card:active{background:#e5faff}
+.icon{font-size:28px}
+.card h3{font-size:16px;margin:9px 0 5px}
+.card p{font-size:12px;color:#718096;margin:0;line-height:1.5}
+.page{display:none;background:white;padding:20px;border-radius:17px;min-height:300px}
+.page h2{color:#14518c}
+button{background:#14518c;color:white;border:0;border-radius:9px;padding:12px 17px;margin:7px 3px;cursor:pointer;font-size:14px}
+button.secondary{background:#e7f0fb;color:#14518c}
+.item{padding:13px;margin:10px 0;background:#f2f7fd;border-radius:10px}
+input{padding:11px;width:100%;border:1px solid #ccd7e6;border-radius:8px;margin:8px 0}
+footer{text-align:center;padding:22px;color:#778399;font-size:12px}
+.notice{background:#e7faff;padding:14px;border-radius:12px;margin-top:18px;font-size:13px;line-height:1.6}
+@media(min-width:600px){.grid{grid-template-columns:repeat(4,1fr)}}
 </style>
 </head>
 <body>
+
 <header>
 <div class="logo">IHope<span>2U</span></div>
-<div class="hero">
-<h1>Welcome to IHope2U</h1>
-<p>Learn, explore, stay updated and grow with us.</p>
-<p>Your all-in-one destination.</p>
-</div>
+<h2 style="color:white">Your Hope, Our Support!</h2>
+<p>शिक्षा, समाचार, जानकारी और मनोरंजन की दुनिया में आपका स्वागत है।</p>
 </header>
+
 <main>
 <div id="home">
-<h2 class="title">Explore IHope2U</h2>
+<h2>🌟 Explore IHope2U</h2>
 <div class="grid">
-<div class="card" onclick="openPage('Home')"><div class="icon">🏠</div><h3>Home</h3><p>Your dashboard and latest updates.</p></div>
-<div class="card" onclick="openPage('News')"><div class="icon">📰</div><h3>News</h3><p>Latest news and useful information.</p></div>
-<div class="card" onclick="openPage('Education')"><div class="icon">🎓</div><h3>Education</h3><p>Study material and exam help.</p></div>
-<div class="card" onclick="openPage('Blogs')"><div class="icon">✍️</div><h3>Blogs</h3><p>Articles, ideas and stories.</p></div>
-<div class="card" onclick="openPage('Earn & Rewards')"><div class="icon">🎁</div><h3>Earn & Rewards</h3><p>Rewards and activities.</p></div>
-<div class="card" onclick="openPage('Entertainment')"><div class="icon">🎬</div><h3>Entertainment</h3><p>Fun content and discoveries.</p></div>
-<div class="card" onclick="openPage('Refer & Earn')"><div class="icon">🤝</div><h3>Refer & Earn</h3><p>Invite your friends.</p></div>
-<div class="card" onclick="openPage('My Profile')"><div class="icon">👤</div><h3>My Profile</h3><p>Your account and preferences.</p></div>
+<div class="card" onclick="openPage('Home')"><div class="icon">🏠</div><h3>Home</h3><p>मुख्य पेज और अपडेट</p></div>
+<div class="card" onclick="openPage('News')"><div class="icon">📰</div><h3>News</h3><p>समाचार और जानकारी</p></div>
+<div class="card" onclick="openPage('Education')"><div class="icon">📚</div><h3>Education</h3><p>अध्ययन और परीक्षा तैयारी</p></div>
+<div class="card" onclick="openPage('Blogs')"><div class="icon">✍️</div><h3>Blogs</h3><p>लेख और कहानियाँ</p></div>
+<div class="card" onclick="openPage('Earn & Rewards')"><div class="icon">🎁</div><h3>Earn & Rewards</h3><p>रिवॉर्ड और गतिविधियाँ</p></div>
+<div class="card" onclick="openPage('Entertainment')"><div class="icon">🎬</div><h3>Entertainment</h3><p>मनोरंजन की दुनिया</p></div>
+<div class="card" onclick="openPage('Refer & Earn')"><div class="icon">🤝</div><h3>Refer & Earn</h3><p>दोस्तों को आमंत्रित करें</p></div>
+<div class="card" onclick="openPage('My Profile')"><div class="icon">👤</div><h3>My Profile</h3><p>अपनी जानकारी</p></div>
 </div>
-<div class="notice"><b>Welcome to IHope2U!</b><br>Learn • Explore • Grow</div>
+<div class="notice"><b>❤️ Welcome to IHope2U!</b><br>Learn • Explore • Grow</div>
 </div>
+
 <div id="section" class="page">
 <h2 id="pageTitle"></h2>
-<p id="pageText"></p>
-<button onclick="goHome()">⬅ Back to Home</button>
+<div id="pageContent"></div>
+<button class="secondary" onclick="goHome()">⬅ Back to Home</button>
 </div>
 </main>
-<footer>© 2026 IHope2U · Learn • Explore • Grow</footer>
+
+<footer>© 2026 IHope2U | Your Hope, Our Support!</footer>
+
 <script>
-const descriptions={
-"Home":"Welcome to your IHope2U dashboard.",
-"News":"News section is ready. News updates will be added soon.",
-"Education":"Education section is ready. Study material will be added soon.",
-"Blogs":"Blog section is ready. Articles will be added soon.",
-"Earn & Rewards":"Rewards features will be added after secure setup.",
-"Entertainment":"Entertainment content will be added soon.",
-"Refer & Earn":"Referral feature will be activated after setup.",
-"My Profile":"Your profile feature will be added after account setup."
-};
-function openPage(name){
-document.getElementById("home").style.display="none";
-document.getElementById("section").style.display="block";
-document.getElementById("pageTitle").textContent=name;
-document.getElementById("pageText").textContent=descriptions[name];
-window.scrollTo(0,0);
-}
-function goHome(){
-document.getElementById("section").style.display="none";
-document.getElementById("home").style.display="block";
-window.scrollTo(0,0);
-}
-</script>
-</body>
-</html>
+const content={
+"Home":`<div class="item">❤️ IHope2U में आपका स्वागत है।</div>
+<div class="item">यहाँ शिक्षा, समाचार
