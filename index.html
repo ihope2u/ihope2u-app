@@ -1,135 +1,464 @@
+
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>IHope2U</title>
+<meta name="theme-color" content="#071b3a">
+<title>IHope2U - Your Hope, Our Support</title>
+
 <style>
 *{box-sizing:border-box}
-body{margin:0;font-family:Arial,sans-serif;background:#f2f6fc;color:#17243b}
-header{background:linear-gradient(135deg,#071b3a,#14518c);color:white;padding:25px 18px;border-radius:0 0 25px 25px}
-.logo{font-size:27px;font-weight:bold}
+
+body{
+ margin:0;
+ font-family:Arial,sans-serif;
+ background:#f2f6fc;
+ color:#17243b;
+}
+
+header{
+ background:linear-gradient(135deg,#071b3a,#14518c);
+ color:white;
+ padding:25px 20px 35px;
+ border-radius:0 0 28px 28px;
+}
+
+.logo{
+ font-size:29px;
+ font-weight:bold;
+}
+
 .logo span{color:#28d1e1}
-header p{color:#dcecff;line-height:1.6}
-main{max-width:850px;margin:auto;padding:16px}
-h2{font-size:20px}
-.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
-.card{background:white;padding:18px 13px;border-radius:16px;border:1px solid #e1e9f4;box-shadow:0 4px 12px #102d5010;cursor:pointer}
+
+.hero{margin-top:25px}
+
+.hero h1{
+ font-size:29px;
+ margin:0 0 12px;
+}
+
+.hero p{
+ color:#dcecff;
+ font-size:15px;
+ line-height:1.7;
+ margin:5px 0;
+}
+
+main{
+ max-width:950px;
+ margin:auto;
+ padding:20px 16px;
+}
+
+.title{
+ font-size:22px;
+ margin:12px 0 20px;
+}
+
+.grid{
+ display:grid;
+ grid-template-columns:repeat(2,1fr);
+ gap:13px;
+}
+
+.card{
+ width:100%;
+ text-align:left;
+ background:white;
+ padding:18px 15px;
+ min-height:145px;
+ border-radius:19px;
+ border:1px solid #e1e9f4;
+ box-shadow:0 5px 16px #102d5010;
+ cursor:pointer;
+ color:#17243b;
+ transition:transform .2s,box-shadow .2s;
+ font-family:inherit;
+}
+
+.card:hover{
+ transform:translateY(-4px);
+ box-shadow:0 9px 20px #102d5020;
+}
+
 .card:active{background:#e5faff}
-.icon{font-size:28px}
-.card h3{font-size:16px;margin:9px 0 5px}
-.card p{font-size:12px;color:#718096;margin:0;line-height:1.5}
-.page{display:none;background:white;padding:20px;border-radius:17px;min-height:300px}
+
+.card:focus-visible{
+ outline:3px solid #28d1e1;
+ outline-offset:3px;
+}
+
+.icon{
+ font-size:32px;
+ margin-bottom:12px;
+}
+
+.card h3{
+ font-size:17px;
+ margin:0 0 7px;
+}
+
+.card p{
+ font-size:13px;
+ color:#718096;
+ margin:0;
+ line-height:1.5;
+}
+
+.notice{
+ margin-top:20px;
+ background:#e4faff;
+ border:1px solid #b8edf4;
+ border-radius:16px;
+ padding:17px;
+ font-size:14px;
+ line-height:1.7;
+}
+
+.page{
+ display:none;
+ background:white;
+ padding:22px;
+ border-radius:18px;
+ min-height:280px;
+ box-shadow:0 5px 18px #102d5010;
+}
+
 .page h2{color:#14518c}
-button{background:#14518c;color:white;border:0;border-radius:9px;padding:12px 17px;margin:7px 3px;cursor:pointer;font-size:14px}
-button.secondary{background:#e7f0fb;color:#14518c}
-.item{padding:13px;margin:10px 0;background:#f2f7fd;border-radius:10px}
-input{padding:11px;width:100%;border:1px solid #ccd7e6;border-radius:8px;margin:8px 0}
-footer{text-align:center;padding:22px;color:#778399;font-size:12px}
-.notice{background:#e7faff;padding:14px;border-radius:12px;margin-top:18px;font-size:13px;line-height:1.6}
-@media(min-width:600px){.grid{grid-template-columns:repeat(4,1fr)}}
+
+.page p{
+ line-height:1.8;
+ color:#58677c;
+}
+
+.item{
+ background:#f2f7fd;
+ padding:15px;
+ border-radius:12px;
+ margin:12px 0;
+ line-height:1.7;
+}
+
+.action{
+ display:inline-block;
+ background:#14518c;
+ color:white;
+ text-decoration:none;
+ padding:12px 18px;
+ border-radius:10px;
+ margin:10px 5px 10px 0;
+ font-size:14px;
+ border:0;
+ cursor:pointer;
+}
+
+.back{
+ background:#e7f0fb;
+ color:#14518c;
+}
+
+footer{
+ text-align:center;
+ padding:25px 15px;
+ color:#778399;
+ font-size:13px;
+ line-height:1.8;
+}
+
+footer a{
+ color:#14518c;
+ text-decoration:none;
+}
+
+@media(min-width:650px){
+ .grid{grid-template-columns:repeat(4,1fr)}
+ header{padding-left:max(25px,calc((100% - 910px)/2))}
+}
+
+@media(max-width:360px){
+ .card{padding:14px 11px}
+ .card h3{font-size:15px}
+}
 </style>
 </head>
+
 <body>
 
 <header>
-<div class="logo">IHope<span>2U</span></div>
-<h2 style="color:white">Your Hope, Our Support!</h2>
-<p>शिक्षा, समाचार, जानकारी और मनोरंजन की दुनिया में आपका स्वागत है।</p>
+ <div class="logo">IHope<span>2U</span></div>
+
+ <div class="hero">
+  <h1>Welcome to IHope2U</h1>
+  <p>Your Hope, Our Support!</p>
+  <p>Learn, Explore, Stay Updated and Grow With Us.</p>
+ </div>
 </header>
 
 <main>
+
+<!-- HOME SECTION -->
+
 <div id="home">
-<h2>🌟 Explore IHope2U</h2>
-<div class="grid">
-<div class="card" onclick="openPage('Home')"><div class="icon">🏠</div><h3>Home</h3><p>मुख्य पेज और अपडेट</p></div>
-<div class="card" onclick="openPage('News')"><div class="icon">📰</div><h3>News</h3><p>समाचार और जानकारी</p></div>
-<div class="card" onclick="openPage('Education')"><div class="icon">📚</div><h3>Education</h3><p>अध्ययन और परीक्षा तैयारी</p></div>
-<div class="card" onclick="openPage('Blogs')"><div class="icon">✍️</div><h3>Blogs</h3><p>लेख और कहानियाँ</p></div>
-<div class="card" onclick="openPage('Earn & Rewards')"><div class="icon">🎁</div><h3>Earn & Rewards</h3><p>रिवॉर्ड और गतिविधियाँ</p></div>
-<div class="card" onclick="openPage('Entertainment')"><div class="icon">🎬</div><h3>Entertainment</h3><p>मनोरंजन की दुनिया</p></div>
-<div class="card" onclick="openPage('Refer & Earn')"><div class="icon">🤝</div><h3>Refer & Earn</h3><p>दोस्तों को आमंत्रित करें</p></div>
-<div class="card" onclick="openPage('My Profile')"><div class="icon">👤</div><h3>My Profile</h3><p>अपनी जानकारी</p></div>
+
+ <h2 class="title">🌟 Explore IHope2U</h2>
+
+ <div class="grid">
+
+  <button class="card" onclick="openPage('Home')">
+   <div class="icon">🏠</div>
+   <h3>Home</h3>
+   <p>Your dashboard and latest updates.</p>
+  </button>
+
+  <button class="card" onclick="openPage('News')">
+   <div class="icon">📰</div>
+   <h3>News</h3>
+   <p>Latest news and useful information.</p>
+  </button>
+
+  <button class="card" onclick="openPage('Education')">
+   <div class="icon">📚</div>
+   <h3>Education</h3>
+   <p>Study material and exam preparation.</p>
+  </button>
+
+  <button class="card" onclick="openPage('Blogs')">
+   <div class="icon">✍️</div>
+   <h3>Blogs</h3>
+   <p>Articles, ideas and useful stories.</p>
+  </button>
+
+  <button class="card" onclick="openPage('Earn & Rewards')">
+   <div class="icon">🎁</div>
+   <h3>Earn & Rewards</h3>
+   <p>Online earning and reward information.</p>
+  </button>
+
+  <button class="card" onclick="openPage('Entertainment')">
+   <div class="icon">🎬</div>
+   <h3>Entertainment</h3>
+   <p>Fun content and discoveries.</p>
+  </button>
+
+  <button class="card" onclick="openPage('Refer & Earn')">
+   <div class="icon">🤝</div>
+   <h3>Refer & Earn</h3>
+   <p>Share IHope2U with your friends.</p>
+  </button>
+
+  <button class="card" onclick="openPage('My Profile')">
+   <div class="icon">👤</div>
+   <h3>My Profile</h3>
+   <p>About IHope2U and contact information.</p>
+  </button>
+
+ </div>
+
+ <div class="notice">
+  <b>❤️ Welcome to IHope2U!</b><br>
+  Your Hope, Our Support!<br>
+  Learn • Explore • Grow
+ </div>
+
 </div>
-<div class="notice"><b>❤️ Welcome to IHope2U!</b><br>Learn • Explore • Grow</div>
-</div>
+
+<!-- INNER PAGE SECTION -->
 
 <div id="section" class="page">
-<h2 id="pageTitle"></h2>
-<div id="pageContent"></div>
-<button class="secondary" onclick="goHome()">⬅ Back to Home</button>
+
+ <h2 id="pageTitle"></h2>
+
+ <p id="pageText"></p>
+
+ <div id="pageExtra"></div>
+
+ <button class="action back" onclick="goHome()">
+  ⬅ Back to Home
+ </button>
+
 </div>
+
 </main>
 
-<footer>© 2026 IHope2U | Your Hope, Our Support!</footer>
+<footer>
+ © 2026 IHope2U. All Rights Reserved.<br>
+ Learn • Explore • Grow
+</footer>
 
 <script>
-const content={
-"Home":`<div class="item">❤️ IHope2U में आपका स्वागत है।</div>
-<div class="item">यहाँ शिक्षा, समाचार
- और मनोरंजन से जुड़ी उपयोगी जानकारी मिलेगी।</div>`,
 
-"News":`
-<div class="item">📰 ताजा समाचार और महत्वपूर्ण अपडेट।</div>
-<div class="item">देश, प्रदेश और स्थानीय समाचार पढ़ें।</div>
-<button onclick="openPosts('News')">समाचार पढ़ें</button>`,
+/* SECTION INFORMATION */
 
-"Education":`
-<div class="item">📚 शिक्षा और प्रतियोगी परीक्षा की तैयारी।</div>
-<div class="item">MP TET, CG TET, CTET और अन्य परीक्षाओं की सामग्री।</div>
-<button onclick="openPosts('Education')">अध्ययन सामग्री पढ़ें</button>`,
+const descriptions={
 
-"Blogs":`
-<div class="item">✍️ रोचक लेख, उपयोगी जानकारी और कहानियाँ।</div>
-<button onclick="openPosts('Blogs')">सभी लेख पढ़ें</button>`,
+"Home":{
+ text:"Welcome to IHope2U! Explore useful information, education, news and entertainment.",
+ label:"",
+ action:""
+},
 
-"Earn & Rewards":`
-<div class="item">🎁 ऑनलाइन कमाई और रिवॉर्ड से जुड़ी जानकारी।</div>
-<div class="item">सावधान रहें और किसी भी योजना की सत्यता जाँचें।</div>
-<button onclick="openPosts('Earn')">जानकारी देखें</button>`,
+"News":{
+ text:"Stay updated with the latest news, important updates and useful information.",
+ label:"News",
+ action:"Read Latest News"
+},
 
-"Entertainment":`
-<div class="item">🎬 मनोरंजन, वीडियो और रोचक जानकारियाँ।</div>
-<button onclick="openPosts('Entertainment')">और देखें</button>`,
+"Education":{
+ text:"Explore study materials, competitive examinations, learning resources and exam preparation.",
+ label:"Education",
+ action:"Explore Education"
+},
 
-"Refer & Earn":`
-<div class="item">🤝 IHope2U को अपने दोस्तों के साथ साझा करें।</div>
-<button onclick="shareWebsite()">Share IHope2U</button>`,
+"Blogs":{
+ text:"Read informative articles, useful tips, knowledge and interesting stories.",
+ label:"Blogs",
+ action:"Read All Blogs"
+},
 
-"My Profile":`
-<div class="item">👤 IHope2U में आपका स्वागत है।</div>
-<div class="item">यह वेबसाइट शिक्षा और उपयोगी जानकारी साझा करने के लिए है।</div>`
+"Earn & Rewards":{
+ text:"Explore online earning information, digital opportunities and reward-related updates. Always verify offers before participating.",
+ label:"Earn & Rewards",
+ action:"Explore Earning Articles"
+},
+
+"Entertainment":{
+ text:"Discover interesting videos, entertainment articles and trending content.",
+ label:"Entertainment",
+ action:"Explore Entertainment"
+},
+
+"Refer & Earn":{
+ text:"Enjoy IHope2U? Share our website with your friends and family. Help others discover useful information.",
+ label:"",
+ action:"Share Website"
+},
+
+"My Profile":{
+ text:"IHope2U is an informational platform covering education, news, technology, knowledge and entertainment.",
+ label:"",
+ action:""
+}
+
 };
 
+/* OPEN SECTION */
+
 function openPage(name){
+
+ const data=descriptions[name];
+
+ if(!data)return;
+
  document.getElementById("home").style.display="none";
+
  document.getElementById("section").style.display="block";
+
  document.getElementById("pageTitle").textContent=name;
- document.getElementById("pageContent").innerHTML=content[name] || "जानकारी उपलब्ध नहीं है।";
+
+ document.getElementById("pageText").textContent=data.text;
+
+ const extra=document.getElementById("pageExtra");
+
+ extra.innerHTML="";
+
+ if(data.label){
+
+  const link=document.createElement("a");
+
+  link.className="action";
+
+  link.textContent=data.action;
+
+  link.href="/search/label/"+encodeURIComponent(data.label);
+
+  extra.appendChild(link);
+
+ }
+
+ if(name==="Refer & Earn"){
+
+  const btn=document.createElement("button");
+
+  btn.className="action";
+
+  btn.textContent="Share IHope2U";
+
+  btn.onclick=shareWebsite;
+
+  extra.appendChild(btn);
+
+ }
+
+ if(name==="My Profile"){
+
+  const link=document.createElement("a");
+
+  link.className="action";
+
+  link.textContent="Contact / About";
+
+  link.href="/p/contact.html";
+
+  extra.appendChild(link);
+
+ }
+
  window.scrollTo(0,0);
+
 }
+
+/* BACK TO HOME */
 
 function goHome(){
+
  document.getElementById("section").style.display="none";
+
  document.getElementById("home").style.display="block";
+
  window.scrollTo(0,0);
+
 }
 
-function openPosts(query){
- window.location.href="/search?q="+encodeURIComponent(query);
-}
+/* SHARE WEBSITE */
 
-function shareWebsite(){
- if(navigator.share){
-  navigator.share({
-   title:"IHope2U",
-   text:"शिक्षा, समाचार और उपयोगी जानकारी के लिए IHope2U देखें।",
-   url:window.location.origin
-  });
- }else{
-  window.prompt("इस लिंक को कॉपी करें:",window.location.origin);
+async function shareWebsite(){
+
+ const shareData={
+  title:"IHope2U",
+  text:"Visit IHope2U - Your Hope, Our Support!",
+  url:window.location.origin
+ };
+
+ try{
+
+  if(navigator.share){
+
+   await navigator.share(shareData);
+
+  }else if(navigator.clipboard){
+
+   await navigator.clipboard.writeText(shareData.url);
+
+   alert("Website link copied successfully!");
+
+  }else{
+
+   prompt("Copy your website link:",shareData.url);
+
+  }
+
+ }catch(error){
+
+  if(error.name!=="AbortError"){
+   prompt("Copy your website link:",shareData.url);
+  }
+
  }
+
 }
+
 </script>
+
 </body>
 </html>
