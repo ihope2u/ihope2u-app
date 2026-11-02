@@ -7,175 +7,91 @@
 <meta name="theme-color" content="#071b3a">
 <title>IHope2U - Your Hope, Our Support</title>
 
+<!-- Monetag SDK -->
+<script src="https://libtl.com/sdk.js"
+data-zone="12177258"
+data-sdk="show_12177258"></script>
+
 <style>
 *{box-sizing:border-box}
-
 body{
  margin:0;
  font-family:Arial,sans-serif;
  background:#f2f6fc;
  color:#17243b;
 }
-
 header{
  background:linear-gradient(135deg,#071b3a,#14518c);
  color:white;
  padding:25px 20px 35px;
  border-radius:0 0 28px 28px;
 }
-
-.logo{
- font-size:29px;
- font-weight:bold;
-}
-
+.logo{font-size:29px;font-weight:bold}
 .logo span{color:#28d1e1}
-
 .hero{margin-top:25px}
-
-.hero h1{
- font-size:29px;
- margin:0 0 12px;
-}
-
+.hero h1{font-size:29px;margin:0 0 12px}
 .hero p{
- color:#dcecff;
- font-size:15px;
- line-height:1.7;
- margin:5px 0;
+ color:#dcecff;font-size:15px;
+ line-height:1.7;margin:5px 0;
 }
-
-main{
- max-width:950px;
- margin:auto;
- padding:20px 16px;
-}
-
-.title{
- font-size:22px;
- margin:12px 0 20px;
-}
-
+main{max-width:950px;margin:auto;padding:20px 16px}
+.title{font-size:22px;margin:12px 0 20px}
 .grid{
  display:grid;
  grid-template-columns:repeat(2,1fr);
  gap:13px;
 }
-
 .card{
- width:100%;
- text-align:left;
- background:white;
- padding:18px 15px;
- min-height:145px;
- border-radius:19px;
- border:1px solid #e1e9f4;
+ width:100%;text-align:left;background:white;
+ padding:18px 15px;min-height:145px;
+ border-radius:19px;border:1px solid #e1e9f4;
  box-shadow:0 5px 16px #102d5010;
- cursor:pointer;
- color:#17243b;
- transition:transform .2s,box-shadow .2s;
+ cursor:pointer;color:#17243b;
  font-family:inherit;
+ transition:transform .2s,box-shadow .2s;
 }
-
 .card:hover{
  transform:translateY(-4px);
  box-shadow:0 9px 20px #102d5020;
 }
-
 .card:active{background:#e5faff}
-
 .card:focus-visible{
- outline:3px solid #28d1e1;
- outline-offset:3px;
+ outline:3px solid #28d1e1;outline-offset:3px;
 }
-
-.icon{
- font-size:32px;
- margin-bottom:12px;
-}
-
-.card h3{
- font-size:17px;
- margin:0 0 7px;
-}
-
+.icon{font-size:32px;margin-bottom:12px}
+.card h3{font-size:17px;margin:0 0 7px}
 .card p{
- font-size:13px;
- color:#718096;
- margin:0;
- line-height:1.5;
+ font-size:13px;color:#718096;
+ margin:0;line-height:1.5;
 }
-
 .notice{
- margin-top:20px;
- background:#e4faff;
- border:1px solid #b8edf4;
- border-radius:16px;
- padding:17px;
- font-size:14px;
- line-height:1.7;
+ margin-top:20px;background:#e4faff;
+ border:1px solid #b8edf4;border-radius:16px;
+ padding:17px;font-size:14px;line-height:1.7;
 }
-
 .page{
- display:none;
- background:white;
- padding:22px;
- border-radius:18px;
- min-height:280px;
+ display:none;background:white;padding:22px;
+ border-radius:18px;min-height:280px;
  box-shadow:0 5px 18px #102d5010;
 }
-
 .page h2{color:#14518c}
-
-.page p{
- line-height:1.8;
- color:#58677c;
-}
-
-.item{
- background:#f2f7fd;
- padding:15px;
- border-radius:12px;
- margin:12px 0;
- line-height:1.7;
-}
-
+.page p{line-height:1.8;color:#58677c}
 .action{
- display:inline-block;
- background:#14518c;
- color:white;
- text-decoration:none;
- padding:12px 18px;
- border-radius:10px;
- margin:10px 5px 10px 0;
- font-size:14px;
- border:0;
- cursor:pointer;
+ display:inline-block;background:#14518c;
+ color:white;text-decoration:none;
+ padding:12px 18px;border-radius:10px;
+ margin:10px 5px 10px 0;font-size:14px;
+ border:0;cursor:pointer;
 }
-
-.back{
- background:#e7f0fb;
- color:#14518c;
-}
-
+.back{background:#e7f0fb;color:#14518c}
 footer{
- text-align:center;
- padding:25px 15px;
- color:#778399;
- font-size:13px;
- line-height:1.8;
+ text-align:center;padding:25px 15px;
+ color:#778399;font-size:13px;line-height:1.8;
 }
-
-footer a{
- color:#14518c;
- text-decoration:none;
-}
-
 @media(min-width:650px){
  .grid{grid-template-columns:repeat(4,1fr)}
  header{padding-left:max(25px,calc((100% - 910px)/2))}
 }
-
 @media(max-width:360px){
  .card{padding:14px 11px}
  .card h3{font-size:15px}
@@ -187,7 +103,6 @@ footer a{
 
 <header>
  <div class="logo">IHope<span>2U</span></div>
-
  <div class="hero">
   <h1>Welcome to IHope2U</h1>
   <p>Your Hope, Our Support!</p>
@@ -197,14 +112,10 @@ footer a{
 
 <main>
 
-<!-- HOME SECTION -->
-
 <div id="home">
-
  <h2 class="title">🌟 Explore IHope2U</h2>
 
  <div class="grid">
-
   <button class="card" onclick="openPage('Home')">
    <div class="icon">🏠</div>
    <h3>Home</h3>
@@ -252,7 +163,6 @@ footer a{
    <h3>My Profile</h3>
    <p>About IHope2U and contact information.</p>
   </button>
-
  </div>
 
  <div class="notice">
@@ -260,23 +170,15 @@ footer a{
   Your Hope, Our Support!<br>
   Learn • Explore • Grow
  </div>
-
 </div>
 
-<!-- INNER PAGE SECTION -->
-
 <div id="section" class="page">
-
  <h2 id="pageTitle"></h2>
-
  <p id="pageText"></p>
-
  <div id="pageExtra"></div>
-
  <button class="action back" onclick="goHome()">
   ⬅ Back to Home
  </button>
-
 </div>
 
 </main>
@@ -287,177 +189,133 @@ footer a{
 </footer>
 
 <script>
-
-/* SECTION INFORMATION */
-
 const descriptions={
-
-"Home":{
- text:"Welcome to IHope2U! Explore useful information, education, news and entertainment.",
- label:"",
- action:""
-},
-
-"News":{
- text:"Stay updated with the latest news, important updates and useful information.",
- label:"News",
- action:"Read Latest News"
-},
-
-"Education":{
- text:"Explore study materials, competitive examinations, learning resources and exam preparation.",
- label:"Education",
- action:"Explore Education"
-},
-
-"Blogs":{
- text:"Read informative articles, useful tips, knowledge and interesting stories.",
- label:"Blogs",
- action:"Read All Blogs"
-},
-
-"Earn & Rewards":{
- text:"Explore online earning information, digital opportunities and reward-related updates. Always verify offers before participating.",
- label:"Earn & Rewards",
- action:"Explore Earning Articles"
-},
-
-"Entertainment":{
- text:"Discover interesting videos, entertainment articles and trending content.",
- label:"Entertainment",
- action:"Explore Entertainment"
-},
-
-"Refer & Earn":{
- text:"Enjoy IHope2U? Share our website with your friends and family. Help others discover useful information.",
- label:"",
- action:"Share Website"
-},
-
-"My Profile":{
- text:"IHope2U is an informational platform covering education, news, technology, knowledge and entertainment.",
- label:"",
- action:""
-}
-
+ "Home":{
+  text:"Welcome to IHope2U! Explore useful information, education, news and entertainment."
+ },
+ "News":{
+  text:"Stay updated with the latest news, important updates and useful information.",
+  label:"News",action:"Read Latest News"
+ },
+ "Education":{
+  text:"Explore study materials, competitive examinations, learning resources and exam preparation.",
+  label:"Education",action:"Explore Education"
+ },
+ "Blogs":{
+  text:"Read informative articles, useful tips, knowledge and interesting stories.",
+  label:"Blogs",action:"Read All Blogs"
+ },
+ "Earn & Rewards":{
+  text:"Explore online earning information, digital opportunities and reward-related updates. Always verify offers before participating.",
+  label:"Earn & Rewards",action:"Explore Earning Articles"
+ },
+ "Entertainment":{
+  text:"Discover interesting videos, entertainment articles and trending content.",
+  label:"Entertainment",action:"Explore Entertainment"
+ },
+ "Refer & Earn":{
+  text:"Enjoy IHope2U? Share our website with your friends and family. Help others discover useful information."
+ },
+ "My Profile":{
+  text:"IHope2U is an informational platform covering education, news, technology, knowledge and entertainment."
+ }
 };
 
-/* OPEN SECTION */
+const BLOG_URL="https://ihope2you.blogspot.com";
 
 function openPage(name){
-
  const data=descriptions[name];
-
  if(!data)return;
 
  document.getElementById("home").style.display="none";
-
  document.getElementById("section").style.display="block";
-
  document.getElementById("pageTitle").textContent=name;
-
  document.getElementById("pageText").textContent=data.text;
 
  const extra=document.getElementById("pageExtra");
-
  extra.innerHTML="";
 
  if(data.label){
-
   const link=document.createElement("a");
-
   link.className="action";
-
   link.textContent=data.action;
-
-  link.href="/search/label/"+encodeURIComponent(data.label);
-
+  link.href=BLOG_URL+"/search/label/"+encodeURIComponent(data.label);
+  link.target="_blank";
+  link.rel="noopener noreferrer";
   extra.appendChild(link);
-link.href="https://ihope2you.blogspot.com/search/label/"+encodeURIComponent(data.label);
  }
 
  if(name==="Refer & Earn"){
-
   const btn=document.createElement("button");
-
   btn.className="action";
-
   btn.textContent="Share IHope2U";
-
   btn.onclick=shareWebsite;
-
   extra.appendChild(btn);
-
  }
 
  if(name==="My Profile"){
-
   const link=document.createElement("a");
-
   link.className="action";
-
   link.textContent="Contact / About";
-
-  link.href="/p/contact.html";
-
+  link.href=BLOG_URL+"/p/contact.html";
+  link.target="_blank";
+  link.rel="noopener noreferrer";
   extra.appendChild(link);
-
  }
 
  window.scrollTo(0,0);
-
 }
-
-/* BACK TO HOME */
 
 function goHome(){
-
  document.getElementById("section").style.display="none";
-
  document.getElementById("home").style.display="block";
-
  window.scrollTo(0,0);
-
 }
 
-/* SHARE WEBSITE */
-
 async function shareWebsite(){
-
  const shareData={
   title:"IHope2U",
   text:"Visit IHope2U - Your Hope, Our Support!",
-  url:window.location.origin
+  url:BLOG_URL
  };
 
  try{
-
   if(navigator.share){
-
    await navigator.share(shareData);
-
   }else if(navigator.clipboard){
-
    await navigator.clipboard.writeText(shareData.url);
-
    alert("Website link copied successfully!");
-
   }else{
-
    prompt("Copy your website link:",shareData.url);
-
   }
-
  }catch(error){
-
   if(error.name!=="AbortError"){
    prompt("Copy your website link:",shareData.url);
   }
-
  }
-
 }
 
+/* MONETAG IN-APP INTERSTITIAL */
+window.addEventListener("load",function(){
+ setTimeout(function(){
+  try{
+   if(typeof show_12177258==="function"){
+    show_12177258({
+     type:"inApp",
+     inAppSettings:{
+      frequency:2,
+      capping:0.1,
+      interval:30,
+      timeout:5,
+      everyPage:false
+     }
+    });
+   }
+  }catch(error){
+   console.log("Monetag ad unavailable:",error);
+  }
+ },5000);
+});
 </script>
 
 </body>
