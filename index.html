@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,7 +6,7 @@
 <meta name="theme-color" content="#071b3a">
 <title>IHope2U - Your Hope, Our Support</title>
 
-<!-- Monetag SDK -->
+<!-- Monetag SDK: Existing Integration -->
 <script src="https://libtl.com/sdk.js"
 data-zone="12177258"
 data-sdk="show_12177258"></script>
@@ -84,6 +83,12 @@ main{max-width:950px;margin:auto;padding:20px 16px}
  border:0;cursor:pointer;
 }
 .back{background:#e7f0fb;color:#14518c}
+.small-note{
+ background:#f0f6ff;border:1px solid #dce8f8;
+ padding:13px;border-radius:12px;
+ font-size:13px;line-height:1.7;
+ margin-top:15px;color:#52647c;
+}
 footer{
  text-align:center;padding:25px 15px;
  color:#778399;font-size:13px;line-height:1.8;
@@ -112,10 +117,12 @@ footer{
 
 <main>
 
+<!-- HOME: ALL 8 ORIGINAL BUTTONS RETAINED -->
 <div id="home">
  <h2 class="title">🌟 Explore IHope2U</h2>
 
  <div class="grid">
+
   <button class="card" onclick="openPage('Home')">
    <div class="icon">🏠</div>
    <h3>Home</h3>
@@ -128,10 +135,10 @@ footer{
    <p>Latest news and useful information.</p>
   </button>
 
-  <button class="card" onclick="openPage('Education')">
-   <div class="icon">📚</div>
-   <h3>Education</h3>
-   <p>Study material and exam preparation.</p>
+  <button class="card" onclick="openPage('Study & Exam Zone')">
+   <div class="icon">🎓</div>
+   <h3>Study & Exam Zone</h3>
+   <p>Notes, MCQ, Mock Tests and exam preparation.</p>
   </button>
 
   <button class="card" onclick="openPage('Blogs')">
@@ -163,6 +170,7 @@ footer{
    <h3>My Profile</h3>
    <p>About IHope2U and contact information.</p>
   </button>
+
  </div>
 
  <div class="notice">
@@ -172,6 +180,7 @@ footer{
  </div>
 </div>
 
+<!-- COMMON SECTION -->
 <div id="section" class="page">
  <h2 id="pageTitle"></h2>
  <p id="pageText"></p>
@@ -189,6 +198,8 @@ footer{
 </footer>
 
 <script>
+const BLOG_URL="https://ihope2you.blogspot.com";
+
 const descriptions={
  "Home":{
   text:"Welcome to IHope2U! Explore useful information, education, news and entertainment."
@@ -196,10 +207,6 @@ const descriptions={
  "News":{
   text:"Stay updated with the latest news, important updates and useful information.",
   label:"News",action:"Read Latest News"
- },
- "Education":{
-  text:"Explore study materials, competitive examinations, learning resources and exam preparation.",
-  label:"Education",action:"Explore Education"
  },
  "Blogs":{
   text:"Read informative articles, useful tips, knowledge and interesting stories.",
@@ -221,28 +228,122 @@ const descriptions={
  }
 };
 
-const BLOG_URL="https://ihope2you.blogspot.com";
+/* STUDY & EXAM ZONE CATEGORIES */
+const studyCategories=[
+ {
+  icon:"🏫",
+  title:"School Education",
+  desc:"Class 6 to 12 • MP Board • CBSE",
+  label:"School Education"
+ },
+ {
+  icon:"🎓",
+  title:"College Education",
+  desc:"College study material and learning",
+  label:"College Education"
+ },
+ {
+  icon:"💼",
+  title:"Government Jobs",
+  desc:"MPESB • MPPSC • SSC • Railway",
+  label:"Government Jobs"
+ },
+ {
+  icon:"👨‍🏫",
+  title:"Teaching Exams",
+  desc:"MP TET • CTET • UGC NET",
+  label:"Teaching Exams"
+ },
+ {
+  icon:"📚",
+  title:"Notes & PDF",
+  desc:"Study notes and downloadable material",
+  label:"Notes PDF"
+ },
+ {
+  icon:"📝",
+  title:"MCQ Practice",
+  desc:"Practice questions and answers",
+  label:"MCQ Practice"
+ }
+];
 
 function openPage(name){
- const data=descriptions[name];
- if(!data)return;
-
  document.getElementById("home").style.display="none";
  document.getElementById("section").style.display="block";
- document.getElementById("pageTitle").textContent=name;
- document.getElementById("pageText").textContent=data.text;
 
+ document.getElementById("pageTitle").textContent=name;
+
+ const pageText=document.getElementById("pageText");
  const extra=document.getElementById("pageExtra");
  extra.innerHTML="";
 
- if(data.label){
-  const link=document.createElement("a");
-  link.className="action";
-  link.textContent=data.action;
-  link.href=BLOG_URL+"/search/label/"+encodeURIComponent(data.label);
-  link.target="_blank";
-  link.rel="noopener noreferrer";
-  extra.appendChild(link);
+ if(name==="Study & Exam Zone"){
+  pageText.textContent=
+   "Choose your class, subject or examination and explore useful study material.";
+
+  studyCategories.forEach(item=>{
+   const card=document.createElement("div");
+   card.style.cssText=
+    "background:#f5f8fd;border:1px solid #e1e9f4;padding:15px;margin:12px 0;border-radius:13px";
+
+   const heading=document.createElement("h3");
+   heading.textContent=item.icon+" "+item.title;
+   heading.style.margin="0 0 7px";
+   heading.style.color="#14518c";
+
+   const desc=document.createElement("p");
+   desc.textContent=item.desc;
+   desc.style.margin="0 0 8px";
+
+   const link=document.createElement("a");
+   link.className="action";
+   link.textContent="Open "+item.title;
+   link.href=BLOG_URL+"/search/label/"+encodeURIComponent(item.label);
+   link.target="_blank";
+   link.rel="noopener noreferrer";
+
+   card.appendChild(heading);
+   card.appendChild(desc);
+   card.appendChild(link);
+   extra.appendChild(card);
+  });
+
+  addStudyFeature(
+   extra,
+   "⏱️ Online Mock Test",
+   "Timed online tests with automatic result and score.",
+   "coming"
+  );
+
+  addStudyFeature(
+   extra,
+   "🏆 Result & Ranking",
+   "View test results, scores and student rankings.",
+   "coming"
+  );
+
+  const note=document.createElement("div");
+  note.className="small-note";
+  note.textContent=
+   "Online Mock Test, Result and Ranking system will be activated after the secure database and Admin Panel are connected.";
+  extra.appendChild(note);
+
+ }else{
+  const data=descriptions[name];
+  if(!data)return;
+
+  pageText.textContent=data.text;
+
+  if(data.label){
+   const link=document.createElement("a");
+   link.className="action";
+   link.textContent=data.action;
+   link.href=BLOG_URL+"/search/label/"+encodeURIComponent(data.label);
+   link.target="_blank";
+   link.rel="noopener noreferrer";
+   extra.appendChild(link);
+  }
  }
 
  if(name==="Refer & Earn"){
@@ -251,6 +352,15 @@ function openPage(name){
   btn.textContent="Share IHope2U";
   btn.onclick=shareWebsite;
   extra.appendChild(btn);
+
+  const link=document.createElement("a");
+  link.className="action";
+  link.textContent="Monetag Referral Information";
+  link.href=
+   BLOG_URL+"/2026/11/monetag-referral-program-5-percent-commission.html";
+  link.target="_blank";
+  link.rel="noopener noreferrer";
+  extra.appendChild(link);
  }
 
  if(name==="My Profile"){
@@ -266,6 +376,32 @@ function openPage(name){
  window.scrollTo(0,0);
 }
 
+function addStudyFeature(parent,title,description,type){
+ const card=document.createElement("div");
+ card.style.cssText=
+  "background:#f5f8fd;border:1px solid #e1e9f4;padding:15px;margin:12px 0;border-radius:13px";
+
+ const heading=document.createElement("h3");
+ heading.textContent=title;
+ heading.style.color="#14518c";
+
+ const desc=document.createElement("p");
+ desc.textContent=description;
+
+ const button=document.createElement("button");
+ button.className="action";
+ button.textContent="Coming Soon";
+ button.style.background="#718096";
+ button.onclick=function(){
+  alert("This feature will be activated after the Admin Panel and database are connected.");
+ };
+
+ card.appendChild(heading);
+ card.appendChild(desc);
+ card.appendChild(button);
+ parent.appendChild(card);
+}
+
 function goHome(){
  document.getElementById("section").style.display="none";
  document.getElementById("home").style.display="block";
@@ -276,7 +412,7 @@ async function shareWebsite(){
  const shareData={
   title:"IHope2U",
   text:"Visit IHope2U - Your Hope, Our Support!",
-  url:BLOG_URL
+  url:WEB_APP_URL
  };
 
  try{
@@ -295,7 +431,9 @@ async function shareWebsite(){
  }
 }
 
-/* MONETAG IN-APP INTERSTITIAL */
+const WEB_APP_URL="https://ihope2u.github.io/ihope2u-app/";
+
+/* MONETAG IN-APP INTERSTITIAL: EXISTING SETTINGS */
 window.addEventListener("load",function(){
  setTimeout(function(){
   try{
